@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 // @flow
 export type dashboardProps={
-fullname:String,
-email:String
+email:String,
+handleLogOut:string=>void
 }
-const Dashboard=({fullname, email}:dashboardProps)=>{
+const Dashboard=({email,handleLogOut}:dashboardProps)=>{
 
 
     return(
-        <div> Hello {fullname} with email {email}</div>
+        <div> Hello
+        <p onClick={handleLogOut}>Logout</p></div>
+
     )
 
 }

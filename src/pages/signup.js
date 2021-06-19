@@ -8,7 +8,6 @@ import Dashboard from "./Dashboard";
 const WrapperDiv = styled.div``;
 
 const SignUp = () => {
-  const [fullname, setFullname] = useState("");
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -64,7 +63,6 @@ const SignUp = () => {
     });
   }
   function clear() {
-    setFullname("");
     setEmail("");
     setPassword("");
   }
@@ -78,11 +76,9 @@ const SignUp = () => {
   return (
     <WrapperDiv>
       {user ? (
-        <Dashboard fullname={fullname} email={email} />
+        <Dashboard email={email}  handleLogOut={handleLogOut}/>
       ) : (
         <Login
-          fullname={fullname}
-          setFullname={setFullname}
           email={email}
           setEmail={setEmail}
           password={password}
