@@ -20,12 +20,12 @@ const StyledH3 = styled.h3`
   color: #ffffff;
 `;
 const StyleedBtn = styled.button`
-  padding:12px 24px
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+  padding:12px 24px,
+  font-weight: 700,
+  border: none,
+  cursor: pointer,
+  display: inline-block,
+  line-height: 1,
 `;
 const SplashPage = () => {
   return (
