@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Quiz from "./quiz"
+import Login from "./login"
+
 function App() {
   return (
     <div>
-      <Quiz />
+      <Login />
     </div>
   );
 }

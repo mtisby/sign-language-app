@@ -1,5 +1,6 @@
 // Define our labelmap
-/*const labelMap = {
+/*
+const labelMap = {
     0: { value: "A", color: "red" },
     1: { value: "B", color: "red" },
     2: { value: "C", color: "red" },
@@ -29,6 +30,7 @@
 
 }
 */
+
 const labelMap = {
     1:{name:'Hello', color:'red'},
     2:{name:'Thank You', color:'yellow'},
@@ -36,6 +38,8 @@ const labelMap = {
     4:{name:'Yes', color:'blue'},
     5:{name:'No', color:'purple'},
 }
+
+
 
 // Define a drawing function
 export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight, ctx) => {

@@ -13,9 +13,12 @@ const Quiz = () => {
   const runCoco = async () => {
     // 3. TODO - Load network
     // e.g. const net = await cocossd.load();
+    //below is working model
     // https://tensorflowjsrealtimemodel.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json
+
+    //"https://signum-ml-sign-app.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json"
     const net = await tf.loadGraphModel(
-        "https://tensorflowjsrealtimemodel.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json"
+      "https://tensorflowjsrealtimemodel.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json"
     );
 
     //  Loop and detect hands
