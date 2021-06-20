@@ -47,7 +47,7 @@ const Quiz = () => {
 
       // 4. TODO - Make Detections
       const img = tf.browser.fromPixels(video);
-      const resized = tf.image.resizeBilinear(img, [640, 480]);
+      const resized = tf.image.resizeBilinear(img, [28, 28]);
       const casted = resized.cast("int32");
       const expanded = casted.expandDims(0);
       const obj = await net.executeAsync(expanded);
