@@ -4,8 +4,8 @@ import fireAuth from "./firebase";
 import styled from "styled-components";
 import Login from "./login";
 import Dashboard from "./Dashboard";
-
-const WrapperDiv = styled.div``;
+const WrapperDiv = styled.div`
+`;
 
 const SignUp = () => {
   const [user, setUser] = useState("");
@@ -33,6 +33,29 @@ const SignUp = () => {
         }
       });
   }
+  
+  function addUser(){
+    fetch("http://localhost:5000/api/v1/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        pwd:password,
+        email: email,
+        points:0,
+        achv:0
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   function handleSignUp(e) {
     clearErrors();
 
@@ -50,6 +73,7 @@ const SignUp = () => {
             break;
         }
       });
+     addUser();
   }
   function handleLogOut() {
     fireAuth.auth().signOut();
@@ -74,9 +98,9 @@ const SignUp = () => {
     authListener();
   }, []);
   return (
-    <WrapperDiv>
+    <WrapperDiv style={{backgroundImage: `url("https://github.com/ismatullaevash/sign-language-app/blob/main/static/mesh-gradient.png?raw=true")`}}>
       {user ? (
-        <Dashboard email={email}  handleLogOut={handleLogOut}/>
+        <Dashboard handleLogOut={handleLogOut}/>
       ) : (
         <Login
           email={email}
