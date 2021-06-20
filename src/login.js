@@ -7,13 +7,11 @@ const StyledHeading = styled.h2`
   height: 121px;
   left: 601px;
   top: 238px;
-
   font-family: Circular Std;
   font-style: normal;
   font-weight: 450;
   font-size: 96px;
   line-height: 121px;
-
   color: #000000;
 `;
 const StyledInput = styled.input`
@@ -21,7 +19,6 @@ const StyledInput = styled.input`
   height: 63px;
   left: 463px;
   top: 469px;
-
   background: #ffffff;
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -32,7 +29,6 @@ const StyledLabel = styled.label`
   height: 46px;
   left: 463px;
   top: 408px;
-
   font-family: Circular Std;
   font-style: normal;
   font-weight: 450;
@@ -46,21 +42,8 @@ const StyledButton = styled.button`
   left: 556px;
   top: 847px;
 `;
-export type loginProps = {
-  email: String,
-  setEmail: (string) => void,
-  password: String,
-  setPassword: (string) => void,
-  handleLogin: (string) => void,
-  handleSignUp: (string) => void,
-  hasAccount: Boolean,
-  setHasAccount: (string) => void,
-  emailErr: String,
-  passwordErr: String,
-};
+
 const Login = ({
-  fullname,
-  setFullname,
   email,
   setEmail,
   password,
@@ -71,7 +54,7 @@ const Login = ({
   setHasAccount,
   emailErr,
   passwordErr,
-}: loginProps) => {
+}) => {
   function handleClick(e) {
     setHasAccount(!hasAccount);
   }

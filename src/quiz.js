@@ -15,8 +15,10 @@ const Quiz = () => {
     // e.g. const net = await cocossd.load();
     //below is working model
     // https://tensorflowjsrealtimemodel.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json
+
+    //"https://signum-ml-sign-app.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json"
     const net = await tf.loadGraphModel(
-        "https://signum-ml-sign-app.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json"
+      "https://tensorflowjsrealtimemodel.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json"
     );
 
     //  Loop and detect hands
@@ -47,7 +49,7 @@ const Quiz = () => {
 
       // 4. TODO - Make Detections
       const img = tf.browser.fromPixels(video);
-      const resized = tf.image.resizeBilinear(img, [28, 28]);
+      const resized = tf.image.resizeBilinear(img, [640, 480]);
       const casted = resized.cast("int32");
       const expanded = casted.expandDims(0);
       const obj = await net.executeAsync(expanded);
